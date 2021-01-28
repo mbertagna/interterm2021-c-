@@ -8,37 +8,36 @@
 inches from the user and converts/outputs the length in both meters and
 centimeters, respectively*/
 
-// Write a program that will read in a length in feet and inches and
-// output the equivalent length in meters and centimeters. Use at least
-// three functions: one for user input, one or more for calculating, and
-// one for output(console). Include a loop that lets the user repeat this
-// computation for new input values until the user says he or she wants to
-// end the program(user has to type exit).There are 0.3048 meters in a foot,
-// 100 centimeters in a meter, and 12 inches in a foot.
-
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+// inputImperialToFt gets input from user (a length in ft and in)
+// and returns a double in ft for the length
 double inputImperialToFt(){
   double ft;
   double in;
   cout << "Feet: ";
-  cin >> ft;
+  cin >> ft;//get ft from user
   cout << "Inches: ";
-  cin >> in;
-  return ft + in / 12;
+  cin >> in;//get in from user
+  return ft + in / 12;//convert length to ft
 }
 
+// FtToMeters converts feet to meters and returns meter (double)
 double FtToMeters(double feet){
   return feet * 0.3048;
 }
 
+//metersToCm converts meters to cm and return cm (double)
 double metersToCm(double meters){
   return meters * 100;
 }
 
+//outputMandCm calls inputImperialToFt in order to get length
+// from user in ft and in. Then, it converts and the length into
+// m and cm and outputs the length in m and cm, respectively
 void outputMandCm(){
   double inches = inputImperialToFt();
   double m = FtToMeters(inches);
@@ -47,8 +46,12 @@ void outputMandCm(){
   cout << "Inputted length in centimeters: " << cm << endl;
 }
 
+//main faciliates the running of above functions
 int main (int argc, char **argv){
   string sent = "";
+  //Loop runs outputMandCm to all user to use program.
+  //Then, Prompts user asking if they would like to exit
+  //Program run over and over until user enters exit
   while (sent != "exit"){
     outputMandCm();
     cout << "To exit, input exit." << endl;

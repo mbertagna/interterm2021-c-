@@ -16,6 +16,7 @@ e. Assignment 2
 3) N/A
 
 4) zyBook used as reference
+   Leah Zahn(Peer) helped in programming process
 
 5) g++ intarray.cpp -o intarray.out
    ./intarray.out
